@@ -14,7 +14,7 @@
     "react": "17.0.1",
     "react-native": "0.64.1",
     "react-native-fs": "^2.18.0",
-    "rn-indy-sdk": "^0.1.9"
+    "rn-indy-sdk": "file:rn-indy-sdk-v0.1.10-revocation.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
