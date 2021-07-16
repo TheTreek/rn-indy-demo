@@ -171,7 +171,8 @@ const App = () => {
     try{
       const request = await buildGetRevocRegDeltaRequest()
       const response = await submitRequest(request)
-      const [,parsed] = await parseGetRevocRegDeltaResponse(response)
+      const [,parsed, timestamp] = await parseGetRevocRegDeltaResponse(response)
+      console.log("timestamp:",timestamp)
       setStates({...states, revocRegDelta: {bool: true, res: parsed}})
       return parsed
     }catch(err){
@@ -185,7 +186,8 @@ const App = () => {
     try{
       const revRegDef = await revocRegDef()
       const revRegDelta = await revocRegDelta()
-      
+      console.log("Delta:", revRegDelta)
+
       console.log(revRegDef)
       const filePath = `${RNFS.DocumentDirectoryPath}/revoc`
       const {tailsLocation, tailsHash} = revRegDef.value
